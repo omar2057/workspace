@@ -1,0 +1,38 @@
+{% extends "index.html" %}
+
+
+{% block content %}
+
+
+{%if a%}
+<h1>Mantenimiento</h1>
+	<h2>Camiones disponibles</h2>
+<br>
+	{% for cat in a %}
+<br>
+	<h6>Serie de camion: {{cat.serie}} <a href="/mantenimiento/{{cat.id}}/">Asignar</a></h6>
+
+
+	{% endfor %}
+{%else%}
+	<h3>No hay camiones disponibles :o</h3>
+{%endif%}
+
+<br><br><br>
+	<h2>Camiones en reparacion</h2>
+<br>
+
+{%if b%}
+	{% for cat in b %}
+<br>
+<br>
+	<h6>Serie de camion: {{cat.serie}} <a href="http://localhost:8000/sacar/camion/{{cat.id}}/">Terminar</a></h6>
+
+
+	{% endfor %}
+{%else%}
+	<h6>No hay camiones en reparacion :)</h6>
+{%endif%}
+
+	<INPUT type="button" value="Regresar " onClick="history.back()">
+{% endblock %}

@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+
+<head>
+
+
+<title>Sandoval's Transport | Oficial</title>
+<meta charset="utf-8" />
+
+<script src= "/media/js/jquery.js"></script>
+<script src="/media/scripts/elegant-press.js" type="text/javascript"></script>
+
+
+
+
+<link rel="stylesheet" href="/media/css/elegant-press.css" type="text/css" />
+
+<!--[if IE]><style>#header h1 a:hover{font-size:75px;}</style><![endif]-->
+</head>
+<body>
+<div class="main-container">
+  <header>
+    <h1><a href="/">Sandoval Transport</a></h1>
+    <p id="tagline"><strong>servicio de logística</strong></p>
+  </header>
+</div>
+<div class="main-container">
+  <div id="sub-headline">
+    <div class="tagline_left"><p id="tagline2">Tel: (664) 333 8796 Mail: <a href="mailto:email@website.com">info@transportsandoval.com</a></p></div>
+    <div class="tagline_right">
+      <form action="#" method="post">
+
+          {% if user.is_authenticated %}
+            <p>Bienvenido de nuevo {{user.username}}</p>
+          {%endif%}
+
+
+
+      </form>
+    </div>
+    <br class="clear" />
+  </div>
+</div>
+
+<div class="main-container">
+  <div id="nav-container">
+   <nav> 
+    <ul class="nav">
+
+      <li class="active"><a href="/">Inicio</a></li>
+
+  {% if user.is_authenticated %}
+
+      <li><a href="#">Rutas</a>
+        <ul>
+          <li><a href="/nueva_ruta">Nueva Ruta</a></li>
+          <li><a href="/rutas_proceso">Ruta en Proceso</a></li>
+          <li><a href="/rutas_pendientes">Rutas Pendientes</a></li>
+        </ul>
+      </li>
+
+
+      <li><a href="#">Camiones</a>
+        <ul>
+          <li><a href="/camion">Mantenimiento</a></li>
+          <li><a href="/estados/camiones">Estados</a></li>
+        </ul>
+      </li>
+
+
+
+      <li><a href="#">Historiales</a>
+        <ul>
+          <li><a href="/historial/mantenimiento">Mantenimientos</a></li>
+          <li><a href="/historial/rutas">Rutas Realizadas</a></li>
+        </ul>
+      </li>
+
+
+
+      <li><a href="#">Administrativos</a>
+  <ul>
+        <li><a href="/administrativo/trabajadores">Empleados</a>
+          <ul>
+            <li><a href="alta/empleado">Alta Empleado</a></li>
+          </ul>
+          </li>
+        <li><a href="/administrativo/camiones">Unidades</a>
+          <ul>
+            <li><a href="/alta/unidad/">Alta Unidad</a></li>
+          </ul>
+    
+        </li>
+        <li><a href="/aseguradoras/">Aseguransa</a>
+        <ul>
+          <li><a href="/aseguradora/camion">Asignar aseguransa</a></li>
+          <li><a href="/administrativo/nueva_aseguradora/">Agregar proveedor</a></li>
+          <li><a href="/asegurados/">Camiones asegurados</a></li>
+        </ul>
+        </li>
+   </ul> 
+</li> 
+
+  <li><a href="/cerrar"><span>logOUT</span></a></li>
+<li><a href="/usuario"><span>Nuevo Usuario</span></a></li>
+
+{%endif%}
+   <li><a href="#">Contacto</a></li>
+
+
+
+   </nav> 
+    <div class="clear"></div>
+  </div>
+</div>
+
+
+<br />
+<br />
+
+    <!-- Inicio sección que se modifica para mostrar el contenido -->
+    <article class="box" id="home_featured21">
+      <!-- Inicio información que se modifica para mostrar el contenido -->
+      {% block content %}
+      <div class="block"><h2>¿Qué somos?</h2>
+        <p>Sandoval Transport es una empresa con amplia experiencia en la actividad del transporte de mercancías, con principios y valores muy arraigados, por que son el principal fundamento para el desarrollo de una empresa solida y profesional.<br /> 
+</p>
+      </div>
+      <div class="block"><h2>¿Qué realizamos?</h2>
+      <img src="/media/images/images/browsers.png" alt="Web Browsers" />
+<br /><br />
+        <p>Somos una empresa de transporte de carga terrestre dedicada a satisfacer los requerimientos de servicios logísticas del mercado, ofreciendo y garantizando la satisfacción total de nuestros clientes. </p>
+
+      </div>
+      <div class="block last"><h2>¿A qué nos dedicamos?</h2>
+        <p>Sandoval's Transport se dedica específicamente al transporte o traslado de mercancía o bienes
+de nuestros clientes; todo esto en equipo dedicado, llevando de un punto “A” a un punto “B” o si
+el cliente lo requiere entregas intermedias, en el horario y fecha que usted como cliente nos
+especifique. <br />
+<br /></p>
+      </div>
+      <div class="clear"></div>
+    </article>
+      <!-- Fin informacón que se muestra en el contenido -->  
+
+
+       </div>
+      {% endblock %}
+
+       <!-- Fin sección que se modifica para mostrar el contenido -->
+ 
+<!--<script src= "/media/js/jquery.js"></script> -->
+
+
+<script type="text/javascript">
+  $(document).on('ready',function(){
+    $.ajax({
+      type:"GET",
+      contentType:"application/json; charset=utf-8",
+      dateType:"json",
+      url:"/ws/",
+      success:function(response){
+        var i=(response.length-1)-2;
+        for(i;i<=(response.length-1);i++){
+          $('#UltCamiones').append("<li>"+response[i].fields.camion+"</li>");
+        }
+      }
+    });
+  });
+
+</script>
+
+
+<div class="callout"> 
+    <div class="calloutcontainer"> 
+        <div class="container_12"> 
+            <div class="grid"> 
+                 <article class="footbox" id="UltCamiones">
+      <h2>Ultimos Camiones con servicio mecanico</h2>
+      <ul>
+        
+        <li>
+              
+
+
+        </li>       
+      </ul>
+    </article>
+
+    
+        </div> 
+
+    </div> 
+</div> </div> 
+
+
+
+ <footer>
+    <p class="tagline_left">Copyright &copy; 2013 - Todos los derechos reservados- <a href="#">Sandoval's Transport</a></p>
+    <p class="tagline_right">Design by <a href="https://www.facebook.com/isaicota?fref=ts" title="Pritesh Gupta" target="_blank" >Isai</a></p>
+    <br class="clear" />
+  </footer>
+
+<br />
+<br />
+
+    </body>
+</html>

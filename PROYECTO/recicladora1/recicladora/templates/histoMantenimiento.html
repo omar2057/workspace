@@ -1,0 +1,29 @@
+{% extends "index.html" %}
+
+{% block content %}
+<h1>Historial de Manteniminetos</h1><br><br>
+	<h2>Manteniminetos en Proceso</h2>
+<br>
+{%if mantenimientoProceso%}
+
+	{% for cat in mantenimientoProceso %}
+<br>
+	<h6>Serie de camion: {{cat.camion}}, Fecha: {{cat.fecha}}</h6>
+
+
+	{% endfor %}
+{%else%}
+<h6>No hay camiones en mantenimiento en este momento</h6>
+{%endif%}
+
+<br><br>
+	<h2>Mantenimientos hechos</h2>
+<br>
+	{% for cat in mantenimientoHechos %}
+<br>
+<br>
+	<h6>Serie de camion: {{cat.camion}}, Fecha: {{cat.fecha}}</h6>
+
+	{% endfor %}
+
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends "index.html" %}
+
+
+{% block content %}
+
+	<h1>Rutas en proceso</h1>
+<br>
+	{% for cat in a %}
+<br>
+			   	<h6>Cliente: {{cat.nombre}}, Direccion: {{cat.direccion}} <a href="/terminar/{{cat.id}}">Terminar</a></h6>
+
+	{% endfor %}
+	
+
+{% endblock %}

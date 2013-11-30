@@ -1,0 +1,22 @@
+{% extends "index.html" %}
+
+
+{% block content %}
+
+	<h1>Rutas pendientes</h1>
+<br>
+{%if a%}
+
+	{% for cat in a %}
+<br>
+<h6>Cliente: {{cat.nombre}}, Direccion: {{cat.direccion}}, {{cat.fecha}} <a href="/camiones/{{cat.id}}">Asignar</a></h6>
+
+	{% endfor %}
+
+
+	{%else%}
+	<h6>No hay rutas pendientes por el momento :D</h6>
+{%endif%}
+	<INPUT type="button" value="Regresar " onClick="history.back()">
+
+{% endblock %}

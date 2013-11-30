@@ -1,0 +1,18 @@
+{% extends "index.html" %}
+
+
+{% block content %}
+
+	<h1>Aseguradoras</h1>
+
+	
+<br>
+	{% for cat in a %}
+<br>
+			   	<h6>Nombre: {{cat.proveedor}}, Direccion: {{cat.direccion}}, Telefono:{{cat.telefono}} </h6>
+
+
+	{% endfor %}
+
+
+{% endblock %}

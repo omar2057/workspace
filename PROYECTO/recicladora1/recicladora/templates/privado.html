@@ -1,0 +1,8 @@
+{% extends "index.html" %}
+
+{% block title %}nuevo usuario{% endblock %}
+
+{% block content %}
+<p>Hola {{usuario.username|upper}}, ultima sesion {{usuario.last_login}}</p>
+
+{% endblock %}

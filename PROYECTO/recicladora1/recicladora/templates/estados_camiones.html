@@ -1,0 +1,29 @@
+{% extends "index.html" %}
+
+
+{% block content %}
+
+	<h1>Estados de Camiones</h1>
+<br>
+	{% for cat in a %}
+<br>	
+	{%     ifequal cat.status 1 %}
+		       <h6>Camion: {{cat.serie}}, Estado: Disponible</h6>
+    {%     endifequal    %}
+
+	{%     ifequal cat.status 0 %}
+		       <h6>Camion: {{cat.serie}}, Estado: Trabajando</h6>
+    {%     endifequal    %}
+
+    {%     ifequal cat.status 2 %}
+		       <h6>Camion: {{cat.serie}}, Estado: Mantenimiento</h6>
+    {%     endifequal    %}
+
+
+
+	{% endfor %}
+
+{% endblock %}
+
+
+

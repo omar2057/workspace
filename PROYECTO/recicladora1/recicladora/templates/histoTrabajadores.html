@@ -1,0 +1,16 @@
+{% extends "index.html" %}
+
+
+{% block content %}
+
+	<h1>Trabajadores </h1>
+
+<br>
+	{% for cat in a %}
+<br>
+			   	<h6>Nombre: {{cat.nombre}}, Apellido: {{cat.apellido}}, Telefono:{{cat.telefono}} </h6>
+
+
+	{% endfor %}
+
+{% endblock %}

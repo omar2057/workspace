@@ -1,0 +1,18 @@
+{% extends "index.html" %}
+
+
+{% block content %}
+
+	<h2>Camiones disponibles</h2>
+
+	<h2>Ruta a: {{id_ruta.direccion}}</h2>
+<br>
+	{% for cat in a %}
+<br>
+			   	<h3>Serie de camion: {{cat.serie}} <a href="/trabajador/{{id_ruta.id}}/{{cat.id}}/">Asignar</a></h3>
+
+
+	{% endfor %}
+	<INPUT type="button" value="Regresar " onClick="history.back()">
+
+{% endblock %}

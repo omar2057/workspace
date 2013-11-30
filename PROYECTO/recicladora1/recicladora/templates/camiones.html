@@ -1,0 +1,28 @@
+{% extends "index.html" %}
+
+
+{% block content %}
+
+	<h1>Camiones </h1>
+		<tr>
+			<th>Serie de Camion</th>
+			<th>Marca</th>
+			<th>Placa de Camion</th>
+			<th>Placa de Caja</th>
+		</tr>	
+<br>
+	{% for cat in a %}
+<br>
+		<tr>
+			<td>{{cat.serie}}</td>
+			<td>{{cat.marca}}</td>
+			<td>{{cat.placa_camion}}</td>
+			<td>{{cat.placa_caja}}</td>
+
+		</tr>
+			   
+
+
+	{% endfor %}
+
+{% endblock %}

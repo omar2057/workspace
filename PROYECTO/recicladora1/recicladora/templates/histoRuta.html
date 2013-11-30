@@ -1,0 +1,14 @@
+{% extends "index.html" %}
+
+{% block content %}
+
+	<h1>Rutas hechas en los ultimos dias</h1>
+<br>
+	{% for cat in a %}
+<br>
+	<h6>Nombre: {{cat.nombre}},Direccion: {{cat.direccion}} ,Costo: {{cat.costo_compra}}, Fecha: {{cat.fecha}}</h6>
+
+
+	{% endfor %}
+
+{% endblock %}

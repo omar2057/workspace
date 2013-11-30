@@ -1,0 +1,18 @@
+{% extends "index.html" %}
+
+
+{% block content %}
+
+	<h1>Camiones asegurados</h1>
+
+	
+<br>
+	{% for cat in a %}
+<br>
+			   	<h6>Serie de camion: {{cat.camion}}</h6>
+
+
+	{% endfor %}
+
+
+{% endblock %}
